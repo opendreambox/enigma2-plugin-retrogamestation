@@ -4,13 +4,13 @@ from Components.Language import language
 from ..Emulator import EmulationHelper
 from ..plugin import emulators
 
-config.plugins.gnuboy = ConfigSubsection()
-config.plugins.gnuboy.romlocation = ConfigDirectory(default="/media")
+config.plugins.retrogamestation.gnuboy = ConfigSubsection()
+config.plugins.retrogamestation.gnuboy.romlocation = ConfigDirectory(default="/media/")
 
 class Gnuboy(object):
 	name = _("Gnuboy")
 	description = _("GameBoy")
-	location = config.plugins.gnuboy.romlocation
+	location = config.plugins.retrogamestation.gnuboy.romlocation
 	pattern = "^.*\.(gb|GB)"
 	cmd = "/usr/bin/gnuboy-start"
 	icon = "gnuboy/gnuboy.png"

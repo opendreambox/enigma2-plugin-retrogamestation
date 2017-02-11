@@ -1,3 +1,6 @@
+from Components.config import config, ConfigSubsection
+config.plugins.retrogamestation = ConfigSubsection()
+
 import dgen
 import dosbox
 import fbzx

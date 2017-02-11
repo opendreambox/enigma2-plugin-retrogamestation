@@ -4,13 +4,13 @@ from Components.Language import language
 from ..Emulator import EmulationHelper
 from ..plugin import emulators
 
-config.plugins.snes = ConfigSubsection()
-config.plugins.snes.romlocation = ConfigDirectory(default="/media")
+config.plugins.retrogamestation.snes = ConfigSubsection()
+config.plugins.retrogamestation.snes.romlocation = ConfigDirectory(default="/media/")
 
 class Snes(object):
 	name = _("Snes9x")
 	description = _("Super Nintendo")
-	location = config.plugins.snes.romlocation
+	location = config.plugins.retrogamestation.snes.romlocation
 	pattern = "^.*\.(zip|smc|SMC|sfc|SFC)"
 	cmd = "/usr/bin/snes9x-start"
 	icon = "snes/sens.png"

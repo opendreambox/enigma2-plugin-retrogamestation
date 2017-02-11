@@ -3,13 +3,13 @@ from Components.config import config, ConfigSubsection, ConfigDirectory
 from ..Emulator import EmulationHelper
 from ..plugin import emulators
 
-config.plugins.gngeo = ConfigSubsection()
-config.plugins.gngeo.romlocation = ConfigDirectory(default="/media")
+config.plugins.retrogamestation.gngeo = ConfigSubsection()
+config.plugins.retrogamestation.gngeo.romlocation = ConfigDirectory(default="/media/")
 
 class GnGeo(object):
 	name = _("GnGeo")
 	description = _("NeoGeo")
-	location = config.plugins.gngeo.romlocation
+	location = config.plugins.retrogamestation.gngeo.romlocation
 	pattern = "^.*\.(zip|ZIP)"
 	cmd = "/usr/bin/gngeo-start"
 	icon = "gngeo/gngeo.png"

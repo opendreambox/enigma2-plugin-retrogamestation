@@ -4,16 +4,16 @@ from Components.Language import language
 from ..Emulator import EmulationHelper
 from ..plugin import emulators
 
-config.plugins.mame = ConfigSubsection()
-config.plugins.mame.romlocation = ConfigDirectory(default="/media")
+config.plugins.retrogamestation.mame = ConfigSubsection()
+config.plugins.retrogamestation.mame.romlocation = ConfigDirectory(default="/media/")
 
-config.plugins.mess = ConfigSubsection()
-config.plugins.mess.romlocation = ConfigDirectory(default="/media")
+config.plugins.retrogamestation.mess = ConfigSubsection()
+config.plugins.retrogamestation.mess.romlocation = ConfigDirectory(default="/media/")
 
 class Mame(object):
 	name = _("AdvanceMAME")
 	description = _("Mame")
-	location = config.plugins.mame.romlocation
+	location = config.plugins.retrogamestation.mame.romlocation
 	pattern = "^.*\.(zip|ZIP)"
 	cmd = "/usr/bin/mame-start"
 	icon = "mame/mame.png"
@@ -23,7 +23,7 @@ emulators.append(EmulationHelper(Mame.name, Mame.description, Mame.cmd, pattern=
 class Mess(object):
 	name = _("AdvanceMESS")
 	description = _("Multiple System Emulator")
-	location = config.plugins.mess.romlocation
+	location = config.plugins.retrogamestation.mess.romlocation
 	pattern = "^.*\.(zip|ZIP)"
 	cmd = "/usr/bin/mess-start"
 	icon = "mame/mame.png"
