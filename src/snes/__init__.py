@@ -26,4 +26,4 @@ if not os_path.exists("/root/.snes9x/snes9x.conf"):
 	if not os_path.exists("/root/.snes9x"):
 		os_mkdir("/root/.snes9x")
 		os_mkdir("/root/.snes9x/rom")
-	copyfile(resolveFilename(SCOPE_PLUGINS, "Extensions/Emulators/snes/snes9x.conf.default"), "/root/.snes9x/snes9x.conf")
+	copyfile(resolveFilename(SCOPE_PLUGINS, "Extensions/RetroGameStation/snes/snes9x.conf.default"), "/root/.snes9x/snes9x.conf")
