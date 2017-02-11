@@ -15,20 +15,31 @@ class Mame(object):
 	description = _("Mame")
 	location = config.plugins.retrogamestation.mame.romlocation
 	pattern = "^.*\.(zip|ZIP)"
-	cmd = "/usr/bin/mame-start"
+	cmd = "/usr/bin/advmame-start"
 	icon = "mame/mame.png"
 
 emulators.append(EmulationHelper(Mame.name, Mame.description, Mame.cmd, pattern=Mame.pattern, romlocation=Mame.location, icon=Mame.icon))
 
-class Mess(object):
-	name = _("AdvanceMESS")
-	description = _("Multiple System Emulator")
-	location = config.plugins.retrogamestation.mess.romlocation
-	pattern = "^.*\.(zip|ZIP)"
-	cmd = "/usr/bin/mess-start"
-	icon = "mame/mame.png"
+class MessEmulationHelperCart(EmulationHelper):
+	def __init__(self, system, name, description, cmd, pattern=None, romlocation=None, icon=None):
+		EmulationHelper.__init__(self, name, description, cmd, pattern=pattern, romlocation=romlocation, icon=icon)
+		self._system = system
 
-emulators.append(EmulationHelper(Mess.name, Mess.description, Mess.cmd, pattern=Mess.pattern, romlocation=Mess.location, icon=Mess.icon))
+	def getRunCmd(self, rom=None):
+		if rom:
+			return "%s %s '%s';" % (self._cmd, self._system, rom)
+		return ""
+
+class MessNES(object):
+	name = _("AdvanceMESS")
+	description = _("Nintendo Entertainment System / Famicom")
+	location = config.plugins.retrogamestation.mess.romlocation
+	pattern = "^.*\.(zip|ZIP|nes)"
+	cmd = "/usr/bin/advmess-start-cart"
+	icon = "mame/mame.png"
+	system = "nes"
+
+emulators.append(MessEmulationHelperCart(MessNES.system, MessNES.name, MessNES.description, MessNES.cmd, pattern=MessNES.pattern, romlocation=MessNES.location, icon=MessNES.icon))
 
 """ MAME INIT """
 from os import path as os_path

@@ -1,7 +1,8 @@
 #!/bin/sh
 
 EMU="advmess"
-ROM=$1
+SYS=$1
+ROM=$2
 NAME=`basename ${0}`
 LOG_FILE=/var/log/${NAME}.log
 
@@ -32,9 +33,9 @@ if [ "${ROM}" != "" ];
 then
 	if [ "${DEBUG}" >= "2" ];
 	then
-		/usr/bin/${EMU} "${ROM}" --log
+		/usr/bin/${EMU} ${SYS} -cart "${ROM}" --log
 	else
-		/usr/bin/${EMU} "${ROM}"
+		/usr/bin/${EMU} ${SYS} -cart "${ROM}"
 	fi
 else
 	echo "${NAME}: no rom found! - exit"

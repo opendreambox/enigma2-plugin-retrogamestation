@@ -3,7 +3,7 @@ installdir = $(bindir)
 install_SCRIPTS = \
 	advmame-start \
 	advmenu-start \
-	advmess-start \
+	advmess-start-cart \
 	dgen-start \
 	dosbox-start \
 	fbzx-start \
