@@ -35,7 +35,7 @@ then
 	then
 		/usr/bin/${EMU} ${SYS} -cart "${ROM}" --log
 	else
-		/usr/bin/${EMU} ${SYS} -cart "${ROM}"
+		/usr/bin/${EMU} ${SYS} -cart "${ROM}" -quiet
 	fi
 else
 	echo "${NAME}: no rom found! - exit"
