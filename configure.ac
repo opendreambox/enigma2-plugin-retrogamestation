@@ -13,8 +13,6 @@ AC_CONFIG_MACRO_DIR([m4])
 
 AM_PATH_PYTHON
 
-PKG_CHECK_MODULES(ENIGMA2, enigma2)
-
 AC_CONFIG_FILES([
 Makefile
 script/Makefile
