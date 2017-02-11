@@ -1,0 +1,8 @@
+Package: enigma2-plugin-extensions-retrogamestation
+Version: 0.1.0
+Architecture: all
+Section: extra
+Priority: optional
+Maintainer: reichi / emanuel
+Description: Retro gaming using emulators
+Depends: enigma2, opendreambox-packagegroup-emulators
