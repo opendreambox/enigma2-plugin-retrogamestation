@@ -28,7 +28,7 @@ fbset -depth 16
 
 if [ "${ROM}" != "" ];
 then
-	/usr/bin/${EMU} -sounddev alsa -sdlbitdepth 16 -VICIIfull -VICIIdscan${LOG_FILE_VICE} -autoload "${ROM}"
+	/usr/bin/${EMU} -sounddev alsa -sdlbitdepth 16 -VICIIfull -VICIIdscan${LOG_FILE_VICE} -autostartwithcolon "${ROM}"
 else
 	/usr/bin/${EMU} -sounddev alsa -sdlbitdepth 16 -VICIIfull -VICIIdscan${LOG_FILE_VICE}
 fi
