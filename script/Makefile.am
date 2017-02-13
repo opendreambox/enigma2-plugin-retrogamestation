@@ -4,6 +4,7 @@ install_SCRIPTS = \
 	advmame-start \
 	advmenu-start \
 	advmess-start-cart \
+	crispy-doom-start \
 	dgen-start \
 	dosbox-start \
 	fbzx-start \

@@ -2,6 +2,7 @@ from Components.config import config, ConfigSubsection
 config.plugins.retrogamestation = ConfigSubsection()
 
 import dgen
+import doom
 import dosbox
 import fbzx
 import gngeo

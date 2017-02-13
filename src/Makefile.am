@@ -1,5 +1,6 @@
 SUBDIRS = \
 	dgen \
+	doom \
 	dosbox \
 	fbzx \
 	gngeo \

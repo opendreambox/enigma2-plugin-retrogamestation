@@ -18,6 +18,7 @@ Makefile
 script/Makefile
 src/Makefile
 src/dgen/Makefile
+src/doom/Makefile
 src/dosbox/Makefile
 src/fbzx/Makefile
 src/gngeo/Makefile
