@@ -7,12 +7,13 @@ from ..plugin import emulators
 config.plugins.retrogamestation.stella = ConfigSubsection()
 config.plugins.retrogamestation.stella.romlocation = ConfigDirectory(default="/media/")
 
-class Stella(object):
+class Stella(EmulationHelper):
 	name = _("Stella")
 	description = _("Atari 2600")
 	location = config.plugins.retrogamestation.stella.romlocation
 	pattern = "^.*\.(bin|BIN)"
 	cmd = "/usr/bin/stella-start"
 	icon = "stella/stella.png"
+	packageName = "stella"
 
-emulators.append(EmulationHelper(Stella.name, Stella.description, Stella.cmd, pattern=Stella.pattern, romlocation=Stella.location, icon=Stella.icon))
+emulators.append(Stella())

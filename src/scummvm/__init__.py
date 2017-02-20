@@ -1,12 +1,13 @@
 from ..Emulator import EmulationHelper
 from ..plugin import emulators
 
-class ScummVM(object):
+class ScummVM(EmulationHelper):
 	name = _("ScummVM")
 	description = _("ScummVM")
 	location = None
 	pattern = None
 	cmd = "/usr/bin/scummvm-start;"
 	icon = "summvm/scummvm.png"
+	packageName = "scummvm"
 
-emulators.append(EmulationHelper(ScummVM.name, ScummVM.description, ScummVM.cmd))
+emulators.append(ScummVM())

@@ -7,12 +7,13 @@ from ..plugin import emulators
 config.plugins.retrogamestation.gnuboy = ConfigSubsection()
 config.plugins.retrogamestation.gnuboy.romlocation = ConfigDirectory(default="/media/")
 
-class Gnuboy(object):
+class Gnuboy(EmulationHelper):
 	name = _("Gnuboy")
 	description = _("GameBoy")
 	location = config.plugins.retrogamestation.gnuboy.romlocation
 	pattern = "^.*\.(gb|GB)"
 	cmd = "/usr/bin/gnuboy-start"
 	icon = "gnuboy/gnuboy.png"
+	packageName = "gnuboy"
 
-emulators.append(EmulationHelper(Gnuboy.name, Gnuboy.description, Gnuboy.cmd, pattern=Gnuboy.pattern, romlocation=Gnuboy.location, icon=Gnuboy.icon))
+emulators.append(Gnuboy())

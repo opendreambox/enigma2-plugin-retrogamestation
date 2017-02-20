@@ -1,12 +1,13 @@
 from ..Emulator import EmulationHelper
 from ..plugin import emulators
 
-class DosBox(object):
+class DosBox(EmulationHelper):
 	name = _("DosBox")
 	description = _("DOS (Disk Operating System)")
 	location = None
 	pattern = None
 	cmd = "/usr/bin/dosbox-start"
 	icon = "doxbox/doxbox.png"
+	packageName = "dosbox"
 
-emulators.append(EmulationHelper(DosBox.name, DosBox.description, DosBox.cmd, icon=DosBox.icon))
+emulators.append(DosBox())

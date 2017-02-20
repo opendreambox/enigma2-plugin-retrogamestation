@@ -6,15 +6,16 @@ from ..plugin import emulators
 config.plugins.retrogamestation.gngeo = ConfigSubsection()
 config.plugins.retrogamestation.gngeo.romlocation = ConfigDirectory(default="/media/")
 
-class GnGeo(object):
+class GnGeo(EmulationHelper):
 	name = _("GnGeo")
 	description = _("NeoGeo")
 	location = config.plugins.retrogamestation.gngeo.romlocation
 	pattern = "^.*\.(zip|ZIP)"
 	cmd = "/usr/bin/gngeo-start"
 	icon = "gngeo/gngeo.png"
+	packageName = "gngeo"
 
-emulators.append(EmulationHelper(GnGeo.name, GnGeo.description, GnGeo.cmd, pattern=GnGeo.pattern, romlocation=GnGeo.location, icon=GnGeo.icon))
+emulators.append(GnGeo())
 
 """ INIT """
 from os import path as os_path, mkdir as os_mkdir

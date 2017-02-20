@@ -8,7 +8,7 @@ from Screens.Screen import Screen
 from Tools.Directories import SCOPE_PLUGINS, resolveFilename
 from Tools.Log import Log
 
-from Emulator import Emulator
+from Emulator import Emulator, EmulationHelper
 from RomBrowser import RomBrowser
 
 loadSkin(resolveFilename(SCOPE_PLUGINS, "Extensions/RetroGameStation/skin.xml"))
@@ -18,7 +18,9 @@ emulators = []
 class RetroGameStation(Screen):
 	def __init__(self, session):
 		Screen.__init__(self, session, windowTitle=_("Retro GameStation"))
-		items = [ ("%s - powered by %s" % (x.description, x.name), x) for x in emulators ]
+		EmulationHelper.updatePackages()
+		items = [ ("%s - powered by %s" % (x.description, x.name), x) for x in emulators if x.check()]
+		items = sorted(items, key=lambda item: item[0])
 		self._menuList = MenuList(items, enableWrapAround=True)
 		self["list"] = self._menuList
 		self["actions"] = NumberActionMap(["OkCancelActions", "MenuActions", "NumberActions"],
