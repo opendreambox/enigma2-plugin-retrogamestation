@@ -18,6 +18,7 @@ class EmulatorSummary(Screen):
 
 class EmulationHelper(object):
 	installed_packages = []
+	fileMode = True
 	name = None
 	description = None
 	cmd = None

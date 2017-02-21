@@ -39,9 +39,9 @@ class RetroGameStation(Screen):
 		current = self._list.getCurrent()
 		Log.w(current)
 		if current:
-			self._currentHelper = current[1]
-			if current[1].location != None:
-				self.session.openWithCallback(self._onRomSelected, RomBrowser, self._currentHelper.name, self._currentHelper.pattern, self._currentHelper.location)
+			self._currentHelper = current[0]
+			if self._currentHelper.location != None:
+				self.session.openWithCallback(self._onRomSelected, RomBrowser, self._currentHelper.name, self._currentHelper.pattern, self._currentHelper.location, filemode=self._currentHelper.fileMode)
 			else:
 				self.session.open(Emulator, self._currentHelper)
 
