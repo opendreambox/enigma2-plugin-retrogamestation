@@ -7,6 +7,7 @@ SUBDIRS = \
 	gnuboy \
 	mame \
 	pcsx \
+	quake \
 	scummvm \
 	snes \
 	stella \

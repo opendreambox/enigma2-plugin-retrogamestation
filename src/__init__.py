@@ -9,6 +9,7 @@ import gngeo
 import gnuboy
 import mame
 import pcsx
+import quake
 import scummvm
 import snes
 import vice

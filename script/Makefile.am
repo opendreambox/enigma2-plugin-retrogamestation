@@ -11,6 +11,7 @@ install_SCRIPTS = \
 	gngeo-start \
 	gnuboy-start \
 	pcsx-start \
+	quake-start \
 	scummvm-start \
 	snes9x-start \
 	stella-start \
