@@ -13,7 +13,7 @@ class Fbzx(EmulationHelper):
 	location = config.plugins.retrogamestation.fbzx.romlocation
 	pattern = "^.*\.(z80|Z80|SNA|sna|TAP|tap|TZX|tzx)"
 	cmd = "/usr/bin/fbzx-start"
-	icon = "fbzx/fbzx.png"
+	icon = "fbzx/fbzx.svg"
 	packageName = "fbzx"
 
 emulators.append(Fbzx())

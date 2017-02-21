@@ -16,7 +16,7 @@ class Mame(EmulationHelper):
 	location = config.plugins.retrogamestation.mame.romlocation
 	pattern = "^.*\.(zip|ZIP)"
 	cmd = "/usr/bin/advmame-start"
-	icon = "mame/mame.png"
+	icon = "mame/mame.svg"
 	packageName = "advancemame"
 
 emulators.append(Mame())
@@ -33,7 +33,7 @@ class MessNES(MessEmulationHelperCart):
 	location = config.plugins.retrogamestation.mess.romlocation
 	pattern = "^.*\.(zip|ZIP|nes)"
 	cmd = "/usr/bin/advmess-start-cart"
-	icon = "mame/mame.png"
+	icon = "mame/nes.svg"
 	system = "nes"
 	packageName = Mame.packageName
 

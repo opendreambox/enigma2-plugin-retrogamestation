@@ -13,7 +13,7 @@ class Gnuboy(EmulationHelper):
 	location = config.plugins.retrogamestation.gnuboy.romlocation
 	pattern = "^.*\.(gb|GB)"
 	cmd = "/usr/bin/gnuboy-start"
-	icon = "gnuboy/gnuboy.png"
+	icon = "gnuboy/gnuboy.svg"
 	packageName = "gnuboy"
 
 emulators.append(Gnuboy())

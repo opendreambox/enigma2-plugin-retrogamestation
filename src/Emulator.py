@@ -8,6 +8,8 @@ from Tools.Log import Log
 
 from os import path as os_path
 from subprocess import check_output
+from Tools.LoadPixmap import LoadPixmap
+from Tools.Directories import resolveFilename, SCOPE_SKIN_IMAGE, SCOPE_PLUGINS
 
 class EmulatorSummary(Screen):
 	def __init__(self, session, parent):
@@ -24,6 +26,7 @@ class EmulationHelper(object):
 	icon = None
 	packageName = None
 	version = ""
+	png = None
 
 	@staticmethod
 	def updatePackages():
@@ -59,8 +62,27 @@ class EmulationHelper(object):
 		for package in EmulationHelper.installed_packages:
 			if package[1] == self.packageName:
 				self.version = package[2]
+				Log.w(self.version)
 				return package[0] == "ii"
 		return False # MISS!
+
+	def toList(self):
+		if not self.png:
+			if self.icon:
+				path = resolveFilename(SCOPE_PLUGINS, "Extensions/RetroGameStation/%s" %(self.icon,))
+				Log.w("%s" %(path,))
+				self.png = LoadPixmap(path)
+			else:
+				self.png = LoadPixmap(resolveFilename(SCOPE_SKIN_IMAGE, "skin_default/icons/plugin.png"))
+
+		return (
+			self,
+			self.name,
+			self.description,
+			self.packageName,
+			self.version,
+			self.png
+		)
 
 class Emulator(Screen, ServiceStopScreen):
 	def __init__(self, session, emulationHelper, rom=None):

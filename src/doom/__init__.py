@@ -12,7 +12,7 @@ class CrispyDoom(EmulationHelper):
 	location = config.plugins.retrogamestation.dgen.romlocation
 	pattern = "^.*\.(wad|WAD)"
 	cmd = "/usr/bin/crispy-doom-start"
-	icon = None
+	icon = "doom/doom.svg"
 	packageName = "crispy-doom"
 
 emulators.append(CrispyDoom())

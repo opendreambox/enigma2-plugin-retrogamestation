@@ -13,7 +13,7 @@ class Stella(EmulationHelper):
 	location = config.plugins.retrogamestation.stella.romlocation
 	pattern = "^.*\.(bin|BIN)"
 	cmd = "/usr/bin/stella-start"
-	icon = "stella/stella.png"
+	icon = "stella/stella.svg"
 	packageName = "stella"
 
 emulators.append(Stella())

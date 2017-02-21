@@ -13,7 +13,7 @@ class Snes(EmulationHelper):
 	location = config.plugins.retrogamestation.snes.romlocation
 	pattern = "^.*\.(zip|smc|SMC|sfc|SFC)"
 	cmd = "/usr/bin/snes9x-start"
-	icon = "snes/sens.png"
+	icon = "snes/snes.svg"
 	packageName = "snes9x-sdl"
 
 emulators.append(Snes())

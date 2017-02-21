@@ -1,4 +1,6 @@
 installdir = /usr/lib/enigma2/python/Plugins/Extensions/RetroGameStation/gngeo
 
 install_PYTHON = __init__.py
-install_DATA = gngeorc.default
+install_DATA = \
+	gngeo.png \
+	gngeorc.default

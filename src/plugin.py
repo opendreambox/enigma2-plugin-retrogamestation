@@ -2,7 +2,7 @@
 from skin import loadSkin
 
 from Components.ActionMap import NumberActionMap
-from Components.MenuList import MenuList
+from Components.Sources.List import List
 from Plugins.Plugin import PluginDescriptor
 from Screens.Screen import Screen
 from Tools.Directories import SCOPE_PLUGINS, resolveFilename
@@ -10,19 +10,25 @@ from Tools.Log import Log
 
 from Emulator import Emulator, EmulationHelper
 from RomBrowser import RomBrowser
+from Components.Label import Label
 
 loadSkin(resolveFilename(SCOPE_PLUGINS, "Extensions/RetroGameStation/skin.xml"))
 
 emulators = []
 
+def RetroGameStationEntryComponent(emulator):
+	return emulator.toList()
+
 class RetroGameStation(Screen):
 	def __init__(self, session):
 		Screen.__init__(self, session, windowTitle=_("Retro GameStation"))
 		EmulationHelper.updatePackages()
-		items = [ ("%s - powered by %s" % (x.description, x.name), x) for x in emulators if x.check()]
-		items = sorted(items, key=lambda item: item[0])
-		self._menuList = MenuList(items, enableWrapAround=True)
-		self["list"] = self._menuList
+		emus = sorted(emulators, key=lambda emulator: emulator.description)
+		items = [ RetroGameStationEntryComponent(emulator) for emulator in emus if emulator.check()]
+		self._list = List(items, enableWrapAround = True, item_height = 50 )
+		self["list"] = self._list
+		self["red"] = Label()
+		self["green"] = Label()
 		self["actions"] = NumberActionMap(["OkCancelActions", "MenuActions", "NumberActions"],
 		{
 			"ok": self._onEmulatorSelected,
@@ -30,7 +36,7 @@ class RetroGameStation(Screen):
 		})
 
 	def _onEmulatorSelected(self):
-		current = self._menuList.getCurrent()
+		current = self._list.getCurrent()
 		Log.w(current)
 		if current:
 			self._currentHelper = current[1]

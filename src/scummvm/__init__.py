@@ -7,7 +7,7 @@ class ScummVM(EmulationHelper):
 	location = None
 	pattern = None
 	cmd = "/usr/bin/scummvm-start;"
-	icon = "summvm/scummvm.png"
+	icon = "scummvm/scummvm.png"
 	packageName = "scummvm"
 
 emulators.append(ScummVM())

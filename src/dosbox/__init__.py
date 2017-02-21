@@ -7,7 +7,7 @@ class DosBox(EmulationHelper):
 	location = None
 	pattern = None
 	cmd = "/usr/bin/dosbox-start"
-	icon = "doxbox/doxbox.png"
+	icon = "dosbox/dosbox.svg"
 	packageName = "dosbox"
 
 emulators.append(DosBox())
