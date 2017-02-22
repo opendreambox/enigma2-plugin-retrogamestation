@@ -24,7 +24,7 @@ emulators.append(Mame())
 class MessEmulationHelperCart(EmulationHelper):
 	def getRunCmd(self, rom=None):
 		if rom:
-			return "%s %s '%s';" % (self._cmd, self._system, rom)
+			return "%s %s '%s';" % (self.cmd, self.system, rom)
 		return ""
 
 class MessNES(MessEmulationHelperCart):
