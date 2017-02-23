@@ -24,6 +24,6 @@ export SDL_DEBUG=${DEBUG}
 
 fbset -depth 16
 
-/usr/bin/${EMU} "${ROM}"
+/usr/bin/${EMU} -G640x480 "${ROM}"
 
 exit 0
