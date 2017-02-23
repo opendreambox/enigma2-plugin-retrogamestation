@@ -9,7 +9,7 @@ config.plugins.retrogamestation.doom.romlocation = ConfigDirectory(default="/med
 class CrispyDoom(EmulationHelper):
 	name = _("Crispy Doom")
 	description = _("DOOM")
-	location = config.plugins.retrogamestation.dgen.romlocation
+	location = config.plugins.retrogamestation.doom.romlocation
 	pattern = "^.*\.(wad|WAD)"
 	cmd = "/usr/bin/crispy-doom-start"
 	icon = "doom/doom.svg"
