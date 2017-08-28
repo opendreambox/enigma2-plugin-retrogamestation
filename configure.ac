@@ -15,6 +15,7 @@ AM_PATH_PYTHON
 
 AC_CONFIG_FILES([
 Makefile
+meta/Makefile
 script/Makefile
 src/Makefile
 src/dgen/Makefile

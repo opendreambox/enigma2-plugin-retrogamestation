@@ -1,0 +1,16 @@
+<default>
+	<prerequisites>
+		<tag type="Games" />
+		<tag type="Multimedia" />
+	</prerequisites>
+	<info>
+		<author>Dream Property GmbH</author>
+		<name>Retro Game Station</name>
+		<packagename>enigma2-plugin-extensions-retrogamestation</packagename>
+		<shortdescription>A coolection of open source game emulator for you dreambox</shortdescription>
+		<description>Play old games you own on your Dreambox using emulators</description>
+	</info>
+	<files type="package"> <!-- without version, without .deb  -->
+		<file type="package" name="enigma2-plugin-extensions-retrogamestation" />
+	</files>
+</default>

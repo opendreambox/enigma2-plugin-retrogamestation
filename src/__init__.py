@@ -12,4 +12,5 @@ import pcsx
 import quake
 import scummvm
 import snes
+import stella
 import vice

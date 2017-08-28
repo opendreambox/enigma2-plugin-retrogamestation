@@ -10,6 +10,9 @@ from os import path as os_path
 from subprocess import check_output
 from Tools.LoadPixmap import LoadPixmap
 from Tools.Directories import resolveFilename, SCOPE_SKIN_IMAGE, SCOPE_PLUGINS
+from Components.Ipkg import IpkgComponent
+from Screens.Ipkg import Ipkg
+
 
 class EmulatorSummary(Screen):
 	def __init__(self, session, parent):
@@ -41,6 +44,10 @@ class EmulationHelper(object):
 					EmulationHelper.installed_packages.append(packageData)
 		except Exception as e:
 			Log.w(e)
+
+	def install(self, session, callback):
+		cmdList = [(IpkgComponent.CMD_INSTALL, { "package": self.packageName })]
+		session.openWithCallback(callback, Ipkg, cmdList = cmdList)
 
 	def __init__(self):
 		pass
@@ -76,13 +83,17 @@ class EmulationHelper(object):
 			else:
 				self.png = LoadPixmap(resolveFilename(SCOPE_SKIN_IMAGE, "skin_default/icons/plugin.png"))
 
+		installed = self.check()
+		name = self.name if installed else _("Press OK to install...")
+
 		return (
 			self,
-			self.name,
+			name,
 			self.description,
 			self.packageName,
 			self.version,
-			self.png
+			self.png,
+			installed,
 		)
 
 class Emulator(Screen, ServiceStopScreen):

@@ -1,1 +1,1 @@
-SUBDIRS = src script
+SUBDIRS = meta src script
