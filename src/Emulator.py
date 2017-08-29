@@ -49,6 +49,10 @@ class EmulationHelper(object):
 		cmdList = [(IpkgComponent.CMD_INSTALL, { "package": self.packageName })]
 		session.openWithCallback(callback, Ipkg, cmdList = cmdList)
 
+	def remove(self, session, callback):
+		cmdList = [(IpkgComponent.CMD_REMOVE, { "package": self.packageName, "autoremove" : True })]
+		session.openWithCallback(callback, Ipkg, cmdList = cmdList)
+
 	def __init__(self):
 		pass
 
