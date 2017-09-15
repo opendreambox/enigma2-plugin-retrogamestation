@@ -116,6 +116,8 @@ input_map[p1_sticky] auto
 input_map[p1_stickz] auto
 input_map[p1_trackballx] auto
 input_map[p1_trackbally] auto
+input_map[p1_select] joystick_button[0,6]
+input_map[p1_start] joystick_button[0,7]
 input_map[p2_dialx] auto
 input_map[p2_dialy] auto
 input_map[p2_lightgunx] auto
@@ -132,6 +134,8 @@ input_map[p2_sticky] auto
 input_map[p2_stickz] auto
 input_map[p2_trackballx] auto
 input_map[p2_trackbally] auto
+input_map[p2_select] joystick_button[1,6]
+input_map[p2_start] joystick_button[1,7]
 input_map[p3_dialx] auto
 input_map[p3_dialy] auto
 input_map[p3_lightgunx] auto

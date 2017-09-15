@@ -42,8 +42,13 @@ emulators.append(MessNES())
 """ MAME INIT """
 from os import path as os_path
 from os import mkdir as os_mkdir
-from os import system as os_system
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS, copyfile
+
+if not os_path.exists("/root/.advance"):
+	os_mkdir("/root/.advance")
 if not os_path.exists("/root/.advance/advmame.rc"):
 	print "[advmame]: config  /root/.advance/advmame.rc not found creating it..."
-	os_system("/usr/bin/advmame --default")
-
+	copyfile(resolveFilename(SCOPE_PLUGINS, "Extensions/RetroGameStation/mame/advmame.rc.default"), "/root/.advance/advmame.rc")
+if not os_path.exists("/root/.advance/advmess.rc"):
+	print "[advmame]: config  /root/.advance/advmess.rc not found creating it..."
+	copyfile(resolveFilename(SCOPE_PLUGINS, "Extensions/RetroGameStation/mame/advmess.rc.default"), "/root/.advance/advmess.rc")
