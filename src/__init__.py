@@ -10,6 +10,7 @@ import gnuboy
 import mame
 import pcsx
 import quake
+import retroarch
 import scummvm
 import snes
 import stella

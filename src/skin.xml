@@ -9,7 +9,7 @@
 			<convert type="TemplatedMultiContent">
 			{"templates":
 				{"default": (50,[
-						MultiContentEntryText(pos=(120,5),size=(620,25),font=0,text=2),# index 2 is the emulator description (real console name)
+						MultiContentEntryText(pos=(120,5),size=(680,25),font=0,text=2),# index 2 is the emulator description (real console name)
 						MultiContentEntryText(pos=(120,26),size=(340,17),font=1,text=1),# index 1 is the emualtor name
 						MultiContentEntryPixmapAlphaTest(pos=(5,5),size=(100,40),png=5),# index 5 is the icon
 					]),

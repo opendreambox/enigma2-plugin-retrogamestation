@@ -27,6 +27,7 @@ src/gnuboy/Makefile
 src/mame/Makefile
 src/pcsx/Makefile
 src/quake/Makefile
+src/retroarch/Makefile
 src/scummvm/Makefile
 src/snes/Makefile
 src/stella/Makefile

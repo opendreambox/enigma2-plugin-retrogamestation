@@ -8,6 +8,7 @@ SUBDIRS = \
 	mame \
 	pcsx \
 	quake \
+	retroarch \
 	scummvm \
 	snes \
 	stella \

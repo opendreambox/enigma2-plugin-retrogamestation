@@ -1,0 +1,26 @@
+#!/bin/sh
+
+EMU="retroarch"
+
+export DISPLAY=0
+export HOME="/root"
+
+#check ulimit
+required=32768
+hard=`ulimit -Hn`
+soft=`ulimit -Sn`
+#raise ulimit?!
+if [ $soft -lt $required -o $hard -lt $required ]; then
+    echo "temporarily raising the open files limit!"
+    ulimit -Hn $required
+    ulimit -Sn $required
+fi
+
+#RUN
+/usr/bin/${EMU}
+
+#restore ulimit
+ulimit -Sn $soft
+ulimit -Hn $hard
+
+exit 0
