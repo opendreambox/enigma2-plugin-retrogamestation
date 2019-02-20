@@ -14,7 +14,7 @@ SUBDIRS = \
 	stella \
 	vice
 
-installdir = /usr/lib/enigma2/python/Plugins/Extensions/RetroGameStation
+installdir = $(libdir)/enigma2/python/Plugins/Extensions/RetroGameStation
 
 install_PYTHON = \
 	__init__.py \

@@ -1,4 +1,4 @@
-installdir = /usr/lib/enigma2/python/Plugins/Extensions/RetroGameStation/snes
+installdir = $(libdir)/enigma2/python/Plugins/Extensions/RetroGameStation/snes
 
 install_PYTHON = __init__.py
 install_DATA = \

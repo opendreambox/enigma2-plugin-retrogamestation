@@ -1,4 +1,4 @@
-installdir = /usr/lib/enigma2/python/Plugins/Extensions/RetroGameStation/gngeo
+installdir = $(libdir)/enigma2/python/Plugins/Extensions/RetroGameStation/gngeo
 
 install_PYTHON = __init__.py
 install_DATA = \
